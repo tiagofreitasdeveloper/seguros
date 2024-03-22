@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 @Component
@@ -18,10 +19,9 @@ public class FabricaCalculoPrecoTarifa {
                     "PATRIMONIAL", CalculoPrecoTarifaSeguroPatrimonial::new);
 
     public CalculoPrecoTarifa getCalculoPorCategoria(String categoria) {
-        var calculoPrecoTarifa = calculosPrecoTarifa.get(categoria);
-        if (calculoPrecoTarifa == null) {
-            throw new NoSuchElementException("Categoria de seguro não encontrada: " + categoria);
-        }
-        return calculoPrecoTarifa.get();
+       return Optional.ofNullable(calculosPrecoTarifa.get(categoria))
+               .orElseThrow(() -> new NoSuchElementException(
+                       "Categoria de seguro não encontrada: " + categoria))
+               .get();
     }
 }
