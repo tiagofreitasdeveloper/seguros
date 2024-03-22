@@ -18,7 +18,7 @@ public class FabricaCalculoPrecoTarifa {
                     "RESIDENCIAL", CalculoPrecoTarifaSeguroResidencial::new,
                     "PATRIMONIAL", CalculoPrecoTarifaSeguroPatrimonial::new);
 
-    public CalculoPrecoTarifa getCalculoPorCategoria(String categoria) {
+    public CalculoPrecoTarifa obterCalculoPorCategoria(String categoria) {
        return Optional.ofNullable(calculosPrecoTarifa.get(categoria))
                .orElseThrow(() -> new NoSuchElementException(
                        "Categoria de seguro não encontrada: " + categoria))
