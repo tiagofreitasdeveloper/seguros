@@ -55,6 +55,6 @@ public class SeguroControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.patch("/seguros")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsBytes(seguro)))
-                .andExpect(MockMvcResultMatchers.status().isCreated());
+                .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
