@@ -34,7 +34,7 @@ public class SeguroController {
     public ResponseEntity<SeguroResponse> atualizar(@RequestBody SeguroRequest seguroRequest) {
         var seguro = toDomain(seguroRequest);
 
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body(toResponse(atualizarSeguro.atualizar(seguro)));
     }
 }
