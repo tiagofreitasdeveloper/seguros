@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "1907c27a-07fd-410f-b0a9-053231f70455",
+		"name": "teste itau seguro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2549702",
+		"_collection_link": "https://interstellar-water-915906.postman.co/workspace/plataforma-de-log%C3%ADstica---work~a0f71a15-3230-45e7-af0b-a84072344237/collection/2549702-1907c27a-07fd-410f-b0a9-053231f70455?action=share&source=collection_link&creator=2549702"
+	},
+	"item": [
+		{
+			"name": "Criar Seguro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Seguro de Vida Individual\",\n    \"categoria\": \"AUTO\",\n    \"preco_base\": 50.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/seguros",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"seguros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Seguro",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : \"ca20c7ac-409f-485e-a46d-ffada479e6c9\",\n    \"nome\": \"Seguro de Vida Individual\",\n    \"categoria\": \"AUTO\",\n    \"preco_base\": 55.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/seguros",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"seguros"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
