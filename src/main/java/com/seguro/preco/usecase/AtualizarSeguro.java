@@ -12,7 +12,8 @@ public class AtualizarSeguro {
     private final AtualizarSeguroPort atualizarSeguroPort;
 
     public Seguro atualizar(Seguro seguro) {
-        var calculoPrecoTarifaSeguro = fabricaCalculoPrecoTarifa.getCalculoPorCategoria(seguro.getCategoria());
+        var calculoPrecoTarifaSeguro =
+                fabricaCalculoPrecoTarifa.obterCalculoPorCategoria(seguro.getCategoria());
         var precoTarifaCalculado = calculoPrecoTarifaSeguro.calcular(seguro.getPrecoBase());
 
         return atualizarSeguroPort.atualizar(seguro.toBuilder()

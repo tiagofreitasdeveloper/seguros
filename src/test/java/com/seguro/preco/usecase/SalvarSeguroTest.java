@@ -27,7 +27,7 @@ public class SalvarSeguroTest {
     @Test
     public void dadoUmSeguroOMetodoSalvarDoPortDeveSerChamado() {
         Mockito.when(salvarSeguroPort.salvar(Mockito.any())).thenReturn(Seguro.builder().build());
-        Mockito.when(fabricaCalculoPrecoTarifa.getCalculoPorCategoria(Mockito.any())).thenReturn(
+        Mockito.when(fabricaCalculoPrecoTarifa.obterCalculoPorCategoria(Mockito.any())).thenReturn(
                 new CalculoPrecoTarifaSeguroVida());
 
         salvarSeguro.salvar(Seguro.builder()
@@ -37,6 +37,6 @@ public class SalvarSeguroTest {
                 .build());
 
         Mockito.verify(salvarSeguroPort).salvar(Mockito.any());
-        Mockito.verify(fabricaCalculoPrecoTarifa).getCalculoPorCategoria(Mockito.any());
+        Mockito.verify(fabricaCalculoPrecoTarifa).obterCalculoPorCategoria(Mockito.any());
     }
 }
