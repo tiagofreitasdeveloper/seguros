@@ -1,0 +1,28 @@
+# Arquivos gerados pelo IntelliJ IDEA
+.idea/
+
+# Arquivos de compilação
+target/
+build/
+
+# Arquivos de configuração específicos do IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+
+# Logs
+log/
+logs/
+*.log
+
+# Cache e arquivos temporários
+.spring-boot
+bin/
+
+# Arquivos de dependências Maven
+dependency-reduced-pom.xml
+
+# Arquivos de compilação e depuração do Maven
+.mvn/
+mvnw
+mvnw.cmd
